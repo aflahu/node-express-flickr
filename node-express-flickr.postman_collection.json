@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "fb4231c2-29a9-47a1-a66b-889e7f963dba",
+		"name": "node-express-flickr",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "{{DOMAIN}}/api/public-photos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const responseJson = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Status code should 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"data should be an Array\", function () {    \r",
+							"  pm.expect(responseJson.data).to.be.an(\"Array\")\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN}}/api/public-photos",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"public-photos"
+					],
+					"query": [
+						{
+							"key": "tag",
+							"value": "car",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{DOMAIN}}/api/public-photos?limiit=2",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const responseJson = pm.response.json();\r",
+							"\r",
+							"pm.test(\"Status code should 200\", function () {\r",
+							"  pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.test(\"data should be an Array\", function () {    \r",
+							"  pm.expect(responseJson.data).to.be.an(\"Array\")\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{DOMAIN}}/api/public-photos?limiit=2",
+					"host": [
+						"{{DOMAIN}}"
+					],
+					"path": [
+						"api",
+						"public-photos"
+					],
+					"query": [
+						{
+							"key": "tag",
+							"value": "car",
+							"disabled": true
+						},
+						{
+							"key": "limiit",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
