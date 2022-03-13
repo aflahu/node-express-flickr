@@ -21,6 +21,10 @@
 							"\r",
 							"pm.test(\"data should be an Array\", function () {    \r",
 							"  pm.expect(responseJson.data).to.be.an(\"Array\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"count should be a number\", function () {    \r",
+							"  pm.expect(responseJson.count).to.be.an(\"number\")\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -66,6 +70,14 @@
 							"\r",
 							"pm.test(\"data should be an Array\", function () {    \r",
 							"  pm.expect(responseJson.data).to.be.an(\"Array\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"count should be a number\", function () {    \r",
+							"  pm.expect(responseJson.count).to.be.an(\"number\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"data should be an Array(2)\", function () {    \r",
+							"  pm.expect(responseJson.data.length).to.eql(2)\r",
 							"});"
 						],
 						"type": "text/javascript"
@@ -76,7 +88,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{DOMAIN}}/api/public-photos?limiit=2",
+					"raw": "{{DOMAIN}}/api/public-photos?limit=2",
 					"host": [
 						"{{DOMAIN}}"
 					],
@@ -91,7 +103,7 @@
 							"disabled": true
 						},
 						{
-							"key": "limiit",
+							"key": "limit",
 							"value": "2"
 						}
 					]
